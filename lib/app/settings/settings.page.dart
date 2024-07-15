@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 import 'package:fintrack/app/accounts/all_accounts_page.dart';
 import 'package:fintrack/app/budgets/budgets_page.dart';
 import 'package:fintrack/app/categories/categories_list.dart';
@@ -6,7 +6,6 @@ import 'package:fintrack/app/currencies/currency_manager.dart';
 import 'package:fintrack/app/settings/about_page.dart';
 import 'package:fintrack/app/settings/appearance_settings_page.dart';
 import 'package:fintrack/app/settings/backup_settings_page.dart';
-import 'package:fintrack/app/settings/help_us_page.dart';
 import 'package:fintrack/app/settings/widgets/setting_card_item.dart';
 import 'package:fintrack/app/stats/stats_page.dart';
 import 'package:fintrack/app/tags/tag_list.page.dart';
@@ -14,6 +13,7 @@ import 'package:fintrack/app/transactions/recurrent_transactions_page.dart';
 import 'package:fintrack/core/presentation/responsive/breakpoints.dart';
 import 'package:fintrack/core/routes/route_utils.dart';
 import 'package:fintrack/i18n/translations.g.dart';
+import 'package:flutter/material.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -37,14 +37,6 @@ class _SettingsPageState extends State<SettingsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SettingCardItem(
-                isPrimary: true,
-                title: t.more.help_us.display,
-                subtitle: t.more.help_us.description,
-                icon: Icons.favorite_rounded,
-                mainAxis: Axis.horizontal,
-                onTap: () => RouteUtils.pushRoute(context, const HelpUsPage()),
-              ),
               const SizedBox(height: 8),
               SettingCardItem(
                 title: t.settings.title_long,

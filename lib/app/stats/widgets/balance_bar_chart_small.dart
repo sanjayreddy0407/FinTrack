@@ -92,7 +92,7 @@ class _BalanceChartSmallState extends State<BalanceChartSmall> {
           reservedSize: 24,
           getTitlesWidget: (value, meta) {
             return Text(
-              value == 0 ? 'Periodo anterior' : 'Este periodo',
+              value == 0 ? 'Previous period' : 'This period',
               style: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w300,
