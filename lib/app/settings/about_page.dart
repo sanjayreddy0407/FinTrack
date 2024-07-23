@@ -66,10 +66,7 @@ class AboutPage extends StatelessWidget {
                               snapshot.data!.appName.capitalize(),
                               style: Theme.of(context).textTheme.headlineMedium,
                             ),
-                            Text(
-                              'v${snapshot.data!.version} (${snapshot.data!.buildNumber})',
-                              style: Theme.of(context).textTheme.labelSmall,
-                            ),
+                        
                             const SizedBox(height: 2),
                             Text(
                               t.intro.welcome_subtitle2,
@@ -91,32 +88,32 @@ class AboutPage extends StatelessWidget {
               subtitle: t.more.about_us.project.contributors_descr,
               onTap: () {
                 openExternalURL(context,
-                    'https://github.com/enrique-lozano/fintrack/graphs/contributors');
+                    'https://github.com/sanjayreddy0407/FinTrack');
               },
             ),
             buildLinkItem(
               t.more.help_us.report,
               onTap: () {
                 openExternalURL(context,
-                    'https://github.com/enrique-lozano/fintrack/issues/new/choose');
+                    'https://github.com/sanjayreddy0407/FinTrack');
               },
             ),
             buildLinkItem(t.more.about_us.project.contact, onTap: () {
-              openExternalURL(context, 'mailto:lozin.technologies@gmail.com');
+              openExternalURL(context, 'mailto:psr040705@gmail.com');
             }),
             createListSeparator(context, t.more.about_us.legal.display),
             buildLinkItem(
               t.more.about_us.legal.terms,
               onTap: () {
                 openExternalURL(context,
-                    'https://github.com/enrique-lozano/fintrack/blob/main/docs/TERMS_OF_USE.md');
+                    'https://github.com/sanjayreddy0407/FinTrack');
               },
             ),
             buildLinkItem(
               t.more.about_us.legal.privacy,
               onTap: () {
                 openExternalURL(context,
-                    'https://github.com/enrique-lozano/fintrack/blob/main/docs/PRIVACY_POLICY.md');
+                    'https://github.com/sanjayreddy0407/FinTrack');
               },
             ),
             buildLinkItem(
@@ -131,7 +128,7 @@ class AboutPage extends StatelessWidget {
                 }
 
                 final info = await PackageInfo.fromPlatform();
-                openLicense(appName: info.appName, version: info.version);
+                openLicense(appName: info.appName);
               },
             ),
           ],

@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:fintrack/core/presentation/animations/animation_controller.dart';
 
@@ -12,6 +14,7 @@ class FadeIn extends StatefulWidget {
   final Duration duration;
 
   @override
+  // ignore: no_logic_in_create_state
   _FadeInState createState() => _FadeInState(duration);
 }
 

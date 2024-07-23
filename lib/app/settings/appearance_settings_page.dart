@@ -105,23 +105,22 @@ class _AdvancedSettingsPageState extends State<AdvancedSettingsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            createListSeparator(context, t.settings.lang_section),
-            buildSelector(
-              title: t.settings.lang_title,
-              dialogDescr: t.settings.lang_descr,
-              items: [
-                SelectItem(value: 'es', label: t.lang.es),
-                SelectItem(value: 'en', label: t.lang.en)
-              ],
-              selected: LocaleSettings.currentLocale.languageTag,
-              onChanged: (value) {
-                LocaleSettings.setLocaleRaw(value, listenToDeviceLocale: true);
+            // createListSeparator(context, t.settings.lang_section),
+            // buildSelector(
+            //   title: t.settings.lang_title,
+            //   dialogDescr: t.settings.lang_descr,
+            //   items: [
+            //      SelectItem(value: 'en', label: t.lang.en)
+            //   ],
+            //   selected: LocaleSettings.currentLocale.languageTag,
+            //   onChanged: (value) {
+            //     LocaleSettings.setLocaleRaw(value, listenToDeviceLocale: true);
 
-                UserSettingService.instance
-                    .setSetting(SettingKey.appLanguage, value)
-                    .then((value) => null);
-              },
-            ),
+            //     UserSettingService.instance
+            //         .setSetting(SettingKey.appLanguage, value)
+            //         .then((value) => null);
+            //   },
+            // ),
             createListSeparator(context, t.settings.theme_and_colors),
             StreamBuilder(
                 stream: UserSettingService.instance

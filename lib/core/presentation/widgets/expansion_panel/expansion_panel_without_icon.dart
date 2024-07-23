@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const double _kPanelHeaderCollapsedHeight = kMinInteractiveDimension;
+// ignore: unused_element
 const EdgeInsets _kPanelHeaderExpandedDefaultPadding = EdgeInsets.symmetric(
   vertical: 64.0 - _kPanelHeaderCollapsedHeight,
 );
@@ -60,7 +61,7 @@ class ExpansionPanelListWithoutIcon extends StatefulWidget {
   /// and false, marking that it will be closed.
   ///
   /// For AppExpansionPanelList, the callback needs to setState when it's notified
-  /// about the closing/opening panel. On the other hand, the callback for
+  /// about the closing/opening panel. On the other hand, the callback forgc vc
   /// AppExpansionPanelList.radio is simply meant to inform the parent widget of
   /// changes, as the radio panels' open/close states are managed internally.
   ///

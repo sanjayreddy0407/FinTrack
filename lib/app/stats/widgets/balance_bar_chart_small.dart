@@ -73,7 +73,7 @@ class _BalanceChartSmallState extends State<BalanceChartSmall> {
                 height: 1,
                 color: borderColor,
               ),
-              const SizedBox(width: 4),
+              const SizedBox(width: 1),
               Text(
                 meta.formattedValue,
                 style: const TextStyle(
@@ -190,39 +190,45 @@ class _BalanceChartSmallState extends State<BalanceChartSmall> {
                     maxDate: widget.dateRangeService.endDate,
                   )),
                 ]),
-                builder: (context, snapshpot) {
-                  if (!snapshpot.hasData) {
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) {
                     return const CircularProgressIndicator();
                   }
 
-                  return BarChart(
-                    BarChartData(
-                      barTouchData: BarTouchData(
-                        touchTooltipData: BarTouchTooltipData(
-                          getTooltipColor: (group) =>
-                              AppColors.of(context).background,
-                          getTooltipItem: (a, b, c, d) => null,
+                  return SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: SizedBox(
+                      width: 400, // Adjust the width as needed
+                      child: BarChart(
+                        BarChartData(
+                          barTouchData: BarTouchData(
+                            touchTooltipData: BarTouchTooltipData(
+                              getTooltipColor: (group) =>
+                                  AppColors.of(context).background,
+                              getTooltipItem: (a, b, c, d) => null,
+                            ),
+                          ),
+                          titlesData: getTitlesData(ultraLightBorderColor),
+                          borderData: FlBorderData(
+                            show: true,
+                            border: Border(
+                              bottom: BorderSide(
+                                  width: 1, color: ultraLightBorderColor),
+                              right: BorderSide(
+                                  width: 1, color: ultraLightBorderColor),
+                            ),
+                          ),
+                          barGroups: [
+                            makeGroupData(
+                                0, -snapshot.data![0], snapshot.data![1],
+                                colors: AppColors.of(context)),
+                            makeGroupData(
+                                1, -snapshot.data![2], snapshot.data![3],
+                                colors: AppColors.of(context)),
+                          ],
+                          gridData: const FlGridData(show: false),
                         ),
                       ),
-                      titlesData: getTitlesData(ultraLightBorderColor),
-                      borderData: FlBorderData(
-                        show: true,
-                        border: Border(
-                          bottom: BorderSide(
-                              width: 1, color: ultraLightBorderColor),
-                          right: BorderSide(
-                              width: 1, color: ultraLightBorderColor),
-                        ),
-                      ),
-                      barGroups: [
-                        makeGroupData(
-                            0, -snapshpot.data![0], snapshpot.data![1],
-                            colors: AppColors.of(context)),
-                        makeGroupData(
-                            1, -snapshpot.data![2], snapshpot.data![3],
-                            colors: AppColors.of(context)),
-                      ],
-                      gridData: const FlGridData(show: false),
                     ),
                   );
                 });

@@ -5,11 +5,12 @@ analyzer:
     - '**/*.freezed.dart'
     - '**/*.mocks.dart'
   errors:
+    file_names: ignore
     missing_required_param: warning
     missing_return: warning
-  enable-experiment:
-    - records
-    - patterns
+  # enable-experiment:
+  #   - records
+  #   - patterns
 
 linter:
   rules:
