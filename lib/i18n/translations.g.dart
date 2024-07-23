@@ -228,7 +228,7 @@ class _TranslationsIntroEn {
 	String get select_your_currency => 'Select your currency';
 	String get welcome_subtitle => 'Your personal finance manager';
 	String get welcome_subtitle2 => '100% open, 100% free';
-	String get welcome_footer => 'By logging in you agree to the <a href=\'https://github.com/enrique-lozano/fintrack/blob/main/docs/PRIVACY_POLICY.md\'>Privacy Policy</a> and the <a href=\'https://github.com/enrique-lozano/fintrack/blob/main/docs/TERMS_OF_USE.md\'>Terms of Use</a> of the application';
+	String get welcome_footer => 'By logging in you agree to the <a href=\'https://github.com/sanjayreddy0407/FinTrack\'>Privacy Policy</a> and the <a href=\'https://github.com/sanjayreddy0407/FinTrack\'>Terms of Use</a> of the application';
 	String get offline_descr_title => 'OFFLINE ACCOUNT:';
 	String get offline_descr => 'Your data will only be stored on your device, and will be safe as long as you don\'t uninstall the app or change phone. To prevent data loss, it is recommended to make a backup regularly from the app settings.';
 	String get offline_start => 'Start session offline';
@@ -1488,7 +1488,7 @@ class _TranslationsIntroEs implements _TranslationsIntroEn {
 	@override String get select_your_currency => 'Selecciona tu divisa';
 	@override String get welcome_subtitle => 'Tu gestor de finanzas personales';
 	@override String get welcome_subtitle2 => '100% libre, 100% gratis';
-	@override String get welcome_footer => 'Al iniciar sesión aceptas la <a href=\'https://github.com/enrique-lozano/fintrack/blob/main/docs/PRIVACY_POLICY.md\'>Política de Privacidad</a> y los <a href=\'https://github.com/enrique-lozano/fintrack/blob/main/docs/TERMS_OF_USE.md\'>Términos de uso</a> de la aplicación';
+	@override String get welcome_footer => 'Al iniciar sesión aceptas la <a href=\'https://github.com/sanjayreddy0407/FinTrack\'>Política de Privacidad</a> y los <a href=\'https://github.com/sanjayreddy0407/FinTrack\'>Términos de uso</a> de la aplicación';
 	@override String get offline_descr_title => 'CUENTA SIN CONEXIÓN:';
 	@override String get offline_descr => 'Tus datos serán guardados unicamente en tu dispositivo, y estarán seguros mientras no desinstales la app o cambies de telefono. Para prevenir la perdida de datos se recomienda realizar una copia de seguridad regularmente desde los ajustes de la app.';
 	@override String get offline_start => 'Iniciar sesión offline';
@@ -2775,7 +2775,7 @@ extension on Translations {
 			case 'intro.select_your_currency': return 'Select your currency';
 			case 'intro.welcome_subtitle': return 'Your personal finance manager';
 			case 'intro.welcome_subtitle2': return '100% open, 100% free';
-			case 'intro.welcome_footer': return 'By logging in you agree to the <a href=\'https://github.com/enrique-lozano/fintrack/blob/main/docs/PRIVACY_POLICY.md\'>Privacy Policy</a> and the <a href=\'https://github.com/enrique-lozano/fintrack/blob/main/docs/TERMS_OF_USE.md\'>Terms of Use</a> of the application';
+			case 'intro.welcome_footer': return 'By logging in you agree to the <a href=\'https://github.com/sanjayreddy0407/FinTrack\'>Privacy Policy</a> and the <a href=\'https://github.com/sanjayreddy0407/FinTrack\'>Terms of Use</a> of the application';
 			case 'intro.offline_descr_title': return 'OFFLINE ACCOUNT:';
 			case 'intro.offline_descr': return 'Your data will only be stored on your device, and will be safe as long as you don\'t uninstall the app or change phone. To prevent data loss, it is recommended to make a backup regularly from the app settings.';
 			case 'intro.offline_start': return 'Start session offline';
@@ -3384,7 +3384,7 @@ extension on _TranslationsEs {
 			case 'intro.select_your_currency': return 'Selecciona tu divisa';
 			case 'intro.welcome_subtitle': return 'Tu gestor de finanzas personales';
 			case 'intro.welcome_subtitle2': return '100% libre, 100% gratis';
-			case 'intro.welcome_footer': return 'Al iniciar sesión aceptas la <a href=\'https://github.com/enrique-lozano/fintrack/blob/main/docs/PRIVACY_POLICY.md\'>Política de Privacidad</a> y los <a href=\'https://github.com/enrique-lozano/fintrack/blob/main/docs/TERMS_OF_USE.md\'>Términos de uso</a> de la aplicación';
+			case 'intro.welcome_footer': return 'Al iniciar sesión aceptas la <a href=\'https://github.com/sanjayreddy0407/FinTrack\'>Política de Privacidad</a> y los <a href=\'\'>Términos de uso</a> de la aplicación';
 			case 'intro.offline_descr_title': return 'CUENTA SIN CONEXIÓN:';
 			case 'intro.offline_descr': return 'Tus datos serán guardados unicamente en tu dispositivo, y estarán seguros mientras no desinstales la app o cambies de telefono. Para prevenir la perdida de datos se recomienda realizar una copia de seguridad regularmente desde los ajustes de la app.';
 			case 'intro.offline_start': return 'Iniciar sesión offline';
