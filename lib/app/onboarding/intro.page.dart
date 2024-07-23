@@ -25,7 +25,7 @@ class IntroPage extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         Text(
-          'fintrack',
+          'Fintrack',
           style: Theme.of(context)
               .textTheme
               .headlineMedium!

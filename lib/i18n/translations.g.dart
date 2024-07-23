@@ -3384,7 +3384,7 @@ extension on _TranslationsEs {
 			case 'intro.select_your_currency': return 'Selecciona tu divisa';
 			case 'intro.welcome_subtitle': return 'Tu gestor de finanzas personales';
 			case 'intro.welcome_subtitle2': return '100% libre, 100% gratis';
-			case 'intro.welcome_footer': return 'Al iniciar sesión aceptas la <a href=\'https://github.com/sanjayreddy0407/FinTrack\'>Política de Privacidad</a> y los <a href=\'https://github.com/sanjayreddy0407/FinTrack\'>Términos de uso</a> de la aplicación';
+			case 'intro.welcome_footer': return 'Al iniciar sesión aceptas la <a href=\'https://github.com/sanjayreddy0407/FinTrack\'>Política de Privacidad</a> y los <a href=\'\'>Términos de uso</a> de la aplicación';
 			case 'intro.offline_descr_title': return 'CUENTA SIN CONEXIÓN:';
 			case 'intro.offline_descr': return 'Tus datos serán guardados unicamente en tu dispositivo, y estarán seguros mientras no desinstales la app o cambies de telefono. Para prevenir la perdida de datos se recomienda realizar una copia de seguridad regularmente desde los ajustes de la app.';
 			case 'intro.offline_start': return 'Iniciar sesión offline';
