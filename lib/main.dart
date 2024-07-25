@@ -1,4 +1,5 @@
 import 'package:drift/drift.dart';
+import 'package:fintrack/app/lockscreen/lockscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:dynamic_color/dynamic_color.dart';
@@ -14,8 +15,7 @@ import 'package:fintrack/core/presentation/theme.dart';
 import 'package:fintrack/core/routes/root_navigator_observer.dart';
 import 'package:fintrack/core/utils/scroll_behavior_override.dart';
 import 'package:fintrack/i18n/translations.g.dart';
-import 'package:flutter_screen_lock/flutter_screen_lock.dart';
-
+ 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const FintrackAppEntryPoint());
@@ -163,115 +163,3 @@ class MaterialAppContainer extends StatelessWidget {
   }
 }
 
-class LockScreen extends StatefulWidget {
-  const LockScreen({super.key});
-
-  @override
-  State<LockScreen> createState() => _LockScreenState();
-}
-
-class _LockScreenState extends State<LockScreen> {
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   checkAndShowLockScreen();
-  // }
-
-  // Future<void> checkAndShowLockScreen() async {
-  //   // final pin = await UserSettingService.instance.getSetting(SettingKey.appPin);
-  //    String pin = '0000';
-  //   if (pin == null) {
-  //     // Show set PIN screen
-  //     showSetPinScreen();
-  //   } else {
-  //     // Show lock screen
-  //     showLockScreen(pin );
-  //   }
-  // }
-
-  void showSetPinScreen() {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => SetPinPage(onPinSet: (pin) {
-          UserSettingService.instance.setSetting(SettingKey.appPin, pin);
-          Navigator.of(context).pop();
-          showLockScreen(pin);
-        }),
-      ),
-    );
-  }
-
-  void showLockScreen(String correctPin) {
-    screenLock(
-      context: context,
-      correctString: correctPin,
-      maxRetries: 2,
-      retryDelay: const Duration(seconds: 3),
-      delayBuilder: (context, delay) => Text(
-        'Cannot be entered for ${(delay.inMilliseconds / 1000).ceil()} seconds.',
-      ),
-      onUnlocked: () {
-          Navigator.push<void>(
-    context,
-    MaterialPageRoute<void>(
-      builder: (BuildContext context) => const 
-    ),
-  );
-      },
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: (){
-      showLockScreen('0000');
-    }, child: Text('UnLock'));
-  }
-}
-
-class SetPinPage extends StatefulWidget {
-  final ValueChanged<String> onPinSet;
-
-  const SetPinPage({super.key, required this.onPinSet});
-
-  @override
-  _SetPinPageState createState() => _SetPinPageState();
-}
-
-class _SetPinPageState extends State<SetPinPage> {
-  final TextEditingController _pinController = TextEditingController();
-
-  @override
-  Widget build(BuildContext context) {
-  
-     return Scaffold(
-      appBar: AppBar(title: Text('Set PIN')),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView(
-           children: [
-            TextField(
-              controller: _pinController,
-              keyboardType: TextInputType.number,
-              obscureText: true,
-              decoration: InputDecoration(labelText: 'Enter PIN'),
-            ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                final pin = _pinController.text;
-                if (pin.isNotEmpty) {
-                  widget.onPinSet(pin);
-                }
-              },
-              child: Text('Set PIN'),
-            ),
-          ],
-        ),
-      ),
-    );
-  
-  
-  
-  }
-}

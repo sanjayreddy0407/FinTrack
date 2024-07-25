@@ -32,7 +32,7 @@ class UserSettingService {
       mode: InsertMode.insertOrReplace,
     );
   }
-
+  
   Stream<String?> getSetting(SettingKey settingKey) {
     return (db.select(db.userSettings)..where((tbl) => tbl.settingKey.equalsValue(settingKey)))
         .map((e) => e.settingValue)

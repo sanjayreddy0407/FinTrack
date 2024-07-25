@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:fintrack/app/lockscreen/setpin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -27,12 +28,18 @@ class _OnboardingPageState extends State<OnboardingPage> {
   introFinished() {
     AppDataService.instance.setAppDataItem(AppDataKey.introSeen, '1').then(
       (value) {
-        RouteUtils.pushRoute(
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => SetPinPage(onPinSet: (pin) {
+          UserSettingService.instance.setSetting(SettingKey.appPin, pin);
+            RouteUtils.pushRoute(
           context,
           TabsPage(key: tabsPageKey),
           withReplacement: true,
         );
-
+          }),
+      ),
+    );
         refresh++;
       },
     );
