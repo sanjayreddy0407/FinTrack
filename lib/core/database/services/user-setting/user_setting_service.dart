@@ -7,6 +7,7 @@ enum SettingKey {
   userName,
   avatar,
   appLanguage,
+  appPin,  // Added appPin to the enum
 
   /// Key to storage the app theme. Could be 'system', 'light' or 'dark'
   themeMode,
@@ -17,29 +18,33 @@ enum SettingKey {
   /// Key to storage if the user have the AMOLED mode activated. Could be '1' (true) or '0' (false)
   amoledMode,
 }
+ 
 
 class UserSettingService {
   final AppDB db;
 
   UserSettingService._(this.db);
-  static final UserSettingService instance =
-      UserSettingService._(AppDB.instance);
+  static final UserSettingService instance = UserSettingService._(AppDB.instance);
 
   Future<int> setSetting(SettingKey settingKey, String? settingValue) async {
     return db.into(db.userSettings).insert(
-        UserSetting(settingKey: settingKey, settingValue: settingValue),
-        mode: InsertMode.insertOrReplace);
+      UserSetting(settingKey: settingKey, settingValue: settingValue),
+      mode: InsertMode.insertOrReplace,
+    );
   }
 
   Stream<String?> getSetting(SettingKey settingKey) {
-    return (db.select(db.userSettings)
-          ..where((tbl) => tbl.settingKey.equalsValue(settingKey)))
+    return (db.select(db.userSettings)..where((tbl) => tbl.settingKey.equalsValue(settingKey)))
         .map((e) => e.settingValue)
         .watchSingleOrNull();
   }
 
-  Stream<List<UserSetting>> getSettings(
-      Expression<bool> Function(UserSettings) filter) {
+  Future<String?> getSettingValue(SettingKey settingKey) async {
+    final result = await (db.select(db.userSettings)..where((tbl) => tbl.settingKey.equalsValue(settingKey))).getSingleOrNull();
+    return result?.settingValue;
+  }
+
+  Stream<List<UserSetting>> getSettings(Expression<bool> Function(UserSettings) filter) {
     return (db.select(db.userSettings)..where(filter)).watch();
   }
 }
