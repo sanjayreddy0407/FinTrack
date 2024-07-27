@@ -1,7 +1,7 @@
 import json
 import os
 
-import requests
+import requests  # type: ignore
 
 current_path = os.path.dirname(os.path.abspath(__file__))
 
