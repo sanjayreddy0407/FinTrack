@@ -69,7 +69,7 @@ class _BalanceChartSmallState extends State<BalanceChartSmall> {
           return Row(
             children: [
               Container(
-                width: 5,
+                width: 3,
                 height: 1,
                 color: borderColor,
               ),
